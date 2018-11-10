@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build-client-watch": "webpack -w",
-    "start-dev": "NODE_ENV='development' npm run build-client-watch & npm run start-server",
+    "start": "NODE_ENV='development' npm run build-client-watch & npm run start-server",
     "start-server": "nodemon server -e html,js,scss --ignore public --ignore client",
     "test": "mocha *.spec.js --compilers js:babel-register"
   },
