@@ -14,9 +14,9 @@ class Home extends Component {
   }
 
   newQuote = () => {
-    fetch('https://talaikis.com/api/quotes/random/')
+    fetch('http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&')
     .then(res => res.json())
-    .then(res => this.setState({ text: res.quote, author: res.author }))
+    .then(res => this.setState({ text: res[0].content, author: res[0].title }))
     .catch((err) => console.log(err))
   }
 
