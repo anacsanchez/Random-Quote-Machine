@@ -14,9 +14,17 @@ class Home extends Component {
   }
 
   newQuote = () => {
-    fetch('https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&')
-    .then(res => res.json())
-    .then(res => this.setState({ text: res[0].content, author: res[0].title }))
+    fetch('https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?', {
+      // method: "GET",
+      // mode:"cors",
+      // headers: {
+      //   "Content-Type": "application/json"
+      // },
+      // body: JSON.stringify(data)
+      // credentials: "omit"
+    })
+    // .then(res => res.json())
+    .then(res => console.log(res))
     .catch((err) => console.log(err))
   }
 

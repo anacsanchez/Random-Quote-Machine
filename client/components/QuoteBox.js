@@ -2,7 +2,7 @@ import React from 'react';
 
 const QuoteBox = ({author, text, fetchQuote}) => (
   <div id="quote-box">
-    <div id="text" dangerouslySetInnerHTML={parseQuote(text)}></div>
+    <div id="text">{text}</div>
     <div id="author">- {author}</div>
     <div>
       <a id="tweet-quote" href={`https://twitter.com/intent/tweet?text=${text}%20-%20${author}`}>
@@ -15,8 +15,8 @@ const QuoteBox = ({author, text, fetchQuote}) => (
   </div>
 )
 
-const parseQuote = (text) => {
-  return {__html: text}
-}
+// const parseQuote = (text) => {
+//   return {__html: text}
+// }
 
 export default QuoteBox;
